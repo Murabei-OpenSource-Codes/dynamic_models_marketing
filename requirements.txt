@@ -1,0 +1,4 @@
+pandas==1.5.2
+numpy==1.24.1
+pybats==0.0.5
+pybats-detection==0.2.1
