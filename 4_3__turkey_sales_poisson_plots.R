@@ -35,6 +35,11 @@ p_predictive <- data_predictive |>
 save_plot(filename = "./figures/turkey_predictive.eps",
           plot = p_predictive, base_height = 4, base_width = 12,
           device = cairo_ps) 
+data_predictive |> 
+  filter(type == "filter") |> 
+  slice(-(1:6)) |> 
+  summarise(mape = mean(abs((mode - sale) / sale)))
+
 
 # Plot posterior ----------------------------------------------------------
 data_posterior <- data_posterior |> 
